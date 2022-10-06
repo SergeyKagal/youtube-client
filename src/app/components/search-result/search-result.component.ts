@@ -14,8 +14,6 @@ export class SearchResultComponent {
     searchItems: [],
   };
 
-  array = [1, 1, 1, 1, 11];
-
   constructor() {
     this.searchResult.etag = responce.etag;
     this.searchResult.pageInfo = responce.pageInfo;

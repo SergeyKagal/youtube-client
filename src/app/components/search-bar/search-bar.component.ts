@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-useless-constructor */
 import { Component } from '@angular/core';
 
 @Component({
@@ -7,6 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./search-bar.component.scss'],
 })
 export class SearchBarComponent {
-  // eslint-disable-next-line @typescript-eslint/no-empty-function
-  constructor() {}
+
 }

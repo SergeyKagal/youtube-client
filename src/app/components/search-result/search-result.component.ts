@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ISearchResult } from 'src/app/models/search-item.model';
 import responce from '../../data/mock-response.json';
 
@@ -7,16 +7,14 @@ import responce from '../../data/mock-response.json';
   templateUrl: './search-result.component.html',
   styleUrls: ['./search-result.component.scss'],
 })
-export class SearchResultComponent {
+export class SearchResultComponent implements OnInit {
   searchResult: ISearchResult = {
     etag: '',
     pageInfo: { resultsPerPage: 0, totalResults: 0 },
     searchItems: [],
   };
 
-  array = [1, 1, 1, 1, 11];
-
-  constructor() {
+  ngOnInit() {
     this.searchResult.etag = responce.etag;
     this.searchResult.pageInfo = responce.pageInfo;
     this.searchResult.searchItems = responce.items.map((item) => ({
@@ -30,6 +28,5 @@ export class SearchResultComponent {
         commentCount: item.statistics.commentCount,
       },
     }));
-    console.log(this.searchResult);
   }
 }
